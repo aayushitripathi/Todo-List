@@ -6,6 +6,14 @@ let count = 0;
 window.onload = function () {
   firstArray = JSON.parse(localStorage.getItem("task"));
   if (firstArray != null) {
+    firstArray.forEach((item) => {let taskArray = [];
+const addButton = document.getElementById("add");
+const display = document.getElementById("root");
+let count = 0;
+
+window.onload = function () {
+  firstArray = JSON.parse(localStorage.getItem("task"));
+  if (firstArray != null) {
     firstArray.forEach((item) => {
       displayOnDOM(createDOM(item));
     });
@@ -16,7 +24,7 @@ window.onload = function () {
 };
 const displayOnDOM = (Container) => {
   display.appendChild(Container);
-}
+};
 
 function Task(description) {
   this.taskId = uuidv4();
