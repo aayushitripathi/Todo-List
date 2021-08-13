@@ -91,22 +91,25 @@ const createDOM = (task) => {
   const para3 = document.createElement("p");
   para3.textContent = `${task.createdOn}`;
 
-  const deletebutton = document.createElement("button");
-  deletebutton.setAttribute("onclick", "deleteTasks(event)");
-  deletebutton.textContent = "DELETE";
+  const delBtn = document.createElement("i");
+  delBtn.classList.add("fas");
+  delBtn.classList.add("fa-minus-circle","fa-2x");
+  delBtn.setAttribute("onclick","deleteTasks(event)");
 
-  const editbutton = document.createElement("button");
-  editbutton.setAttribute("onclick", "editTasks(event)");
-  editbutton.textContent = "EDIT";
-
-  const donebutton = document.createElement("button");
-  donebutton.setAttribute("onclick", "doneTasks(event)");
-  donebutton.textContent = "DONE EDIT";
+  const editbutton = document.createElement("i");
+  editbutton.classList.add("fas");
+  editbutton.classList.add(   "fa-edit","fa-2x");
+  editbutton.setAttribute("onclick","editTasks(event)");
+  
+  const donebutton = document.createElement("i");
+  donebutton.classList.add("fas");
+  donebutton.classList.add(   "fa-thumbs-up","fa-2x");
+  donebutton.setAttribute("onclick","doneTasks(event)");
 
   markup.appendChild(para1);
   markup.appendChild(para2);
   markup.appendChild(para3);
-  markup.appendChild(deletebutton);
+  markup.appendChild(delBtn);
   markup.appendChild(editbutton);
   markup.appendChild(donebutton);
 
