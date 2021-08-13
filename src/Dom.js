@@ -180,7 +180,7 @@ const createDOM = (task) => {
   const btn2 = document.createElement("button");
   btn2.classList.add("btn", "btn-complete");
   const i2 = document.createElement("i");
-  btn2.classList.add("far", "fa-check-circle");
+  btn2.classList.add("fa", "fa-check-circle");
   btn2.appendChild(i2);
   markup.appendChild(btn2);
   btn2.setAttribute("onclick", `completedTodo(event)`);
