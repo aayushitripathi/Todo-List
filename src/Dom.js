@@ -16,7 +16,7 @@ window.onload = function () {
 };
 const displayOnDOM = (Container) => {
   display.appendChild(Container);
-};
+}
 
 function Task(description) {
   this.taskId = uuidv4();
