@@ -3,17 +3,17 @@ const addButton = document.getElementById("add");
 const display = document.getElementById("root");
 let count = 0;
 
-window.onload = function() {
-    firstArray = JSON.parse(localStorage.getItem('task'));
-    if(firstArray != null){
-        firstArray.forEach((item) => {
-            displayOnDOM(createDOM(item));
-        });
-        taskArray = [...firstArray];
-        firstArray = [];
-    }
-    return ;
-  };
+window.onload = function () {
+  firstArray = JSON.parse(localStorage.getItem("task"));
+  if (firstArray != null) {
+    firstArray.forEach((item) => {
+      displayOnDOM(createDOM(item));
+    });
+    taskArray = [...firstArray];
+    firstArray = [];
+  }
+  return;
+};
 const displayOnDOM = (Container) => {
   display.appendChild(Container);
 };
@@ -22,8 +22,18 @@ function Task(description) {
   this.taskId = uuidv4();
   this.description = description;
   this.createdOn = Date();
-  this.isCompleted=false;
+  this.isCompleted = false;
+  console.log(this.taskId);
 }
+
+const addTask = (tasks1) => {
+  event.preventDefault();
+  const task = new Task(task1.tasks.value);
+  taskArray.push(task);
+  display.appendChild(createDOM(task));
+  console.log(taskArray);
+  localStorage.setItem("task", JSON.stringify(taskArray));
+};
 
 const completedTodo = (e) => {
   const todoId = e.target.parentElement.id;
@@ -33,15 +43,7 @@ const completedTodo = (e) => {
   const completedtasks = document.getElementById(todoId);
   let canceltask = completedtasks.childNodes[2];
   canceltask.style = "text-decoration: line-through";
-};
-
-const addTask = (tasks1) => {
-  event.preventDefault();
-  const task = new Task(task1.tasks.value);
-  taskArray.push(task);
-  display.appendChild(createDOM(task));
   localStorage.setItem("task", JSON.stringify(taskArray));
-  document.querySelector("#mytask").value = " ";
 };
 
 const deleteTasks = (e) => {
@@ -51,7 +53,6 @@ const deleteTasks = (e) => {
   parenDom.remove();
   localStorage.setItem("task", JSON.stringify(taskArray));
 };
-
 const editTasks = (e) => {
   const pare = e.target.parentElement.children[2].textContent;
   document.getElementById("task").value = pare;
@@ -74,7 +75,7 @@ const createDOM = (task) => {
   const btn2 = document.createElement("button");
   btn2.classList.add("btn", "btn-complete");
   const i2 = document.createElement("i");
-  btn2.classList.add("far", "fa-check-circle");
+  btn2.classList.add("fa", "fa-lg", "fa-check-double");
   btn2.appendChild(i2);
   markup.appendChild(btn2);
   btn2.setAttribute("onclick", `completedTodo(event)`);
@@ -83,28 +84,27 @@ const createDOM = (task) => {
   for (let i = 0; i <= taskArray.length; i++) {
     count = 0 + taskArray.length;
   }
-  para1.textContent = `${count}`;
 
   const para2 = document.createElement("para");
   para2.textContent = `     ${task.description}`;
-
   const para3 = document.createElement("p");
+
   para3.textContent = `${task.createdOn}`;
 
   const delBtn = document.createElement("i");
   delBtn.classList.add("fas");
-  delBtn.classList.add("fa-minus-circle","fa-2x");
-  delBtn.setAttribute("onclick","deleteTasks(event)");
+  delBtn.classList.add("fa-minus-circle", "fa-2x");
+  delBtn.setAttribute("onclick", "deleteTasks(event)");
 
   const editbutton = document.createElement("i");
   editbutton.classList.add("fas");
-  editbutton.classList.add(   "fa-edit","fa-2x");
-  editbutton.setAttribute("onclick","editTasks(event)");
-  
+  editbutton.classList.add("fa-edit", "fa-2x");
+  editbutton.setAttribute("onclick", "editTasks(event)");
+
   const donebutton = document.createElement("i");
   donebutton.classList.add("fas");
-  donebutton.classList.add(   "fa-thumbs-up","fa-2x");
-  donebutton.setAttribute("onclick","doneTasks(event)");
+  donebutton.classList.add("fa-thumbs-up", "fa-2x");
+  donebutton.setAttribute("onclick", "doneTasks(event)");
 
   markup.appendChild(para1);
   markup.appendChild(para2);
@@ -116,4 +116,4 @@ const createDOM = (task) => {
   return markup;
 };
 
-addButton.addEventListener('click',addTask);
+addButton.addEventListener("click", addTask);
