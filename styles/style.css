@@ -1,5 +1,5 @@
 body {
-  background-color: #055052;
+  background: #4d244e;
 }
 #add {
   height: 6vh;
@@ -38,12 +38,21 @@ input {
   border-radius: 3px;
   /* margin-top: 400px; */
 }
-div {
-  height: 10vh;
-  width: 70%;
-  margin-left: 250px;
-  margin-top: 20px;
-  /* border: 2px solid black; */
+li{
+  width: 35%;
+  border-radius: 10px;
+  margin-top: 7px;
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 14px;
+  transition: 0.2s;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  user-select: none;
+  margin-left: 600px;
+  transition: all 0.5s ease;
 }
 para {
   font-size: 1.5rem;
@@ -62,20 +71,15 @@ button {
 img {
   height: 5vh;
 }
-@media (max-width: 1607px) {
-  div {
-    margin-left: 350px;
-  }
-}
-@media (max-width: 1607px) {
-  label {
-    margin-left: 600px;
-  }
+@media (max-width: 1607px) { */
+  /* label {
+    margin-left: px;
+  } */
   #add {
     margin-left: 600px;
   }
-  div {
-    margin-left: 300px;
+  li {
+    margin-left: 600px;
   }
 }
 @media (max-width: 1323px) {
@@ -85,8 +89,8 @@ img {
   #add {
     margin-left: 400px;
   }
-  div {
-    margin-left: 200px;
+  li {
+    margin-left: 350px;
   }
 }
 @media (max-width: 1177px) {
@@ -96,8 +100,8 @@ img {
   #add {
     margin-left: 400px;
   }
-  div {
-    margin-left: 200px;
+  li {
+    margin-left: 300px;
   }
 }
 @media (max-width: 993px) {
@@ -107,8 +111,9 @@ img {
   #add {
     margin-left: 300px;
   }
-  div {
-    margin-left: 150px;
+  li {
+    width: 40%;
+    margin-left: 250px;
   }
   input {
     width: 20%;
@@ -120,9 +125,11 @@ img {
   }
   #add {
     margin-left: 250px;
+    width: 13%;
   }
-  div {
-    margin-left: 130px;
+  li {
+    width: 50%;
+    margin-left: 200px;
   }
 }
 @media (max-width: 829px) {
@@ -136,9 +143,8 @@ img {
   #clear {
     width: 15%;
   }
-  div {
+  li {
     margin-left: 130px;
-    margin-top: 50px;
   }
   input {
     width: 22%;
@@ -155,9 +161,8 @@ img {
   #clear {
     width: 15%;
   }
-  div {
+  li{
     margin-left: 100px;
-    margin-top: 50px;
   }
 }
 @media (max-width: 667px) {
@@ -171,10 +176,9 @@ img {
   #clear {
     width: 15%;
   }
-  div {
-    margin-left: 70px;
+  /* li{
     margin-top: 50px;
-  }
+  } */
 }
 @media (max-width: 665px) {
   label {
@@ -187,9 +191,9 @@ img {
   #clear {
     width: 17%;
   }
-  div {
+  li {
     margin-left: 70px;
-    margin-top: 50px;
+    width: 60%;
   }
 }
 @media (max-width: 578px) {
@@ -203,9 +207,9 @@ img {
   #clear {
     width: 19%;
   }
-  div {
+  li {
     margin-left: 70px;
-    margin-top: 50px;
+   
   }
   input {
     width: 25%;
@@ -222,9 +226,8 @@ img {
   #clear {
     width: 22%;
   }
-  div {
+  li{
     margin-left: 60px;
-    margin-top: 50px;
   }
 }
 @media (max-width: 459px) {
@@ -238,9 +241,9 @@ img {
   #clear {
     width: 23%;
   }
-  div {
+  li{
     margin-left: 65px;
-    margin-top: 50px;
+ 
   }
 }
 @media (max-width: 439px) {
@@ -254,9 +257,9 @@ img {
   #clear {
     width: 25%;
   }
-  div {
+  li{
     margin-left: 60px;
-    margin-top: 50px;
+   
   }
 }
 @media (max-width: 430px) {
@@ -270,9 +273,9 @@ img {
   #clear {
     width: 25%;
   }
-  div {
+  li {
     margin-left: 60px;
-    margin-top: 90px;
+   
   }
 }
 @media (max-width: 400px) {
@@ -292,9 +295,8 @@ img {
   input {
     width: 190px;
   }
-  div {
+  li {
     margin-left: 0px;
-    margin-top: 50px;
     width: 100%;
     /* visibility: hidden; */
   }
@@ -316,9 +318,8 @@ img {
   input {
     width: 190px;
   }
-  div {
+  li {
     margin-left: 0px;
-    margin-top: 50px;
     width: 100%;
     /* visibility: hidden; */
   }
@@ -342,10 +343,8 @@ img {
   input {
     width: 190px;
   }
-  div {
+  li {
     margin-left: 0px;
-    margin-top: 50px;
     width: 100%;
-    /* visibility: hidden; */
   }
-}
+} 
