@@ -69,7 +69,7 @@ const doneTasks = (e, x) => {
 
 const createDOM = (task) => {
   document.querySelector("#task").value = "";
-  const markup = document.createElement("div");
+  const markup = document.createElement("li");
   markup.id = `${task.taskId}`;
 
   const btn2 = document.createElement("button");
