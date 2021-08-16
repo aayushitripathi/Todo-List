@@ -44,6 +44,14 @@ const completedTodo = (e) => {
   let canceltask = completedtasks.childNodes[2];
   canceltask.style = "text-decoration: line-through";
   localStorage.setItem("task", JSON.stringify(taskArray));
+  let editTask = e.target.parentElement.childNodes[5];
+  let doneTask = e.target.parentElement.childNodes[6];
+  editTask.style.display="none";
+  doneTask.style.display="none";
+
+
+  
+
 };
 
 const deleteTasks = (e) => {
@@ -105,6 +113,14 @@ const createDOM = (task) => {
   donebutton.classList.add("fas");
   donebutton.classList.add("fa-thumbs-up", "fa-2x");
   donebutton.setAttribute("onclick", "doneTasks(event)");
+  if(task.isCompleted)
+  {
+  console.log("listfield.isComplete");
+  
+  editbutton.style.display="none";
+  donebutton.style.display="none";
+  para2.style = "text-decoration: line-through";
+  }
 
   markup.appendChild(para1);
   markup.appendChild(para2);
